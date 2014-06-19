@@ -2,7 +2,6 @@
 
 ShinyCensusApp
 ==============
-counties.rds
 counties.rds is a dataset of demographic data for each county in the United States, collected with the UScensus2010 R package. You can download it here.
 
 Once you have the file,
@@ -30,6 +29,7 @@ Save helpers.R inside your census-app directory,
 The percent_map function in helpers.R takes five arguments:
 
 Argument	Input
+================
 var	a column vector from the counties.rds dataset
 color	any character string you see in the output of colors()
 legend.title	A character string to use as the title of the plot’s legend
@@ -43,6 +43,7 @@ counties <- readRDS("census-app/data/counties.rds")
 percent_map(counties$white, "darkgreen", "% white")
 
 Loading files and file paths
+=============================
 Take a look at the above code. To use percent_map, we first ran helpers.R with the source function, and then loaded counties.rds with the readRDS function. We also ran library(maps).
 
 You will need to ask Shiny to call the same functions before it uses percent_map in your app, but how you write these functions will change. Both source and readRDS require a file path, and file paths do not behave the same way in a Shiny app as they do at the command line.
